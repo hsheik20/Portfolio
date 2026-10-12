@@ -204,3 +204,54 @@ document.querySelector("#year").textContent =
   new Date().getFullYear();
 
 renderScroll();
+
+// Skills bubbles: hover, keyboard focus, and tap support.
+document.querySelectorAll(".skill-bubble").forEach(bubble => {
+  let pinned = false;
+  let hovered = false;
+
+  function updateBubble() {
+    const focused = document.activeElement === bubble;
+
+    bubble.setAttribute(
+      "aria-expanded",
+      String(pinned || hovered || focused)
+    );
+  }
+
+  bubble.addEventListener("pointerenter", event => {
+    if (event.pointerType === "mouse") {
+      hovered = true;
+      updateBubble();
+    }
+  });
+
+  bubble.addEventListener("pointerleave", () => {
+    hovered = false;
+    updateBubble();
+  });
+
+  bubble.addEventListener("focus", updateBubble);
+  bubble.addEventListener("blur", updateBubble);
+
+  bubble.addEventListener("click", () => {
+    pinned = !pinned;
+
+    // Close on a second tap/click.
+    if (!pinned) {
+      hovered = false;
+      bubble.blur();
+    }
+
+    updateBubble();
+  });
+
+  bubble.addEventListener("keydown", event => {
+    if (event.key === "Escape") {
+      pinned = false;
+      hovered = false;
+      bubble.blur();
+      updateBubble();
+    }
+  });
+});

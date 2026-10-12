@@ -15,6 +15,497 @@
   --sans: Arial, Helvetica, sans-serif;
 }
 
+/* Contact section */
+section#contact.contact-section {
+  padding: 90px 6%;
+  background: var(--sand);
+  color: var(--coffee);
+  text-align: center;
+}
+
+#contact .contact-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#contact .contact-eyebrow {
+  margin: 0 auto 20px;
+  color: var(--olive);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+#contact h2 {
+  margin-bottom: 24px;
+}
+
+#contact .contact-description {
+  max-width: 560px;
+  margin: 0 auto 35px;
+}
+
+/* Horizontal frame */
+#contact .contact-links {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 0;
+  width: auto;
+  padding: 8px;
+  border: 1px solid var(--coffee);
+  border-radius: 12px;
+  background: transparent;
+}
+
+/* Individual icon links */
+#contact .contact-links > a.contact-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 56px;
+  width: 56px;
+  height: 44px;
+  min-width: 0;
+  margin: 0;
+  padding: 10px;
+  background: transparent;
+  color: var(--coffee);
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+#contact .contact-links > a.contact-link + a.contact-link {
+  border-left: 1px solid var(--coffee);
+}
+
+/* Explicitly constrain the SVG logos */
+#contact .contact-links > a.contact-link > svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+  max-width: 22px;
+  max-height: 22px;
+  flex: 0 0 22px;
+}
+
+/* Accessible labels, visually hidden */
+#contact .contact-link span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+#contact .contact-links > a.contact-link:hover {
+  color: var(--olive);
+  transform: none;
+  box-shadow: none;
+}
+
+/* ABOUT: JOURNEY TIMELINE */
+.about-journey {
+  padding: 90px 6%;
+  background: var(--milk);
+  color: var(--coffee);
+}
+
+.journey-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.journey-heading {
+  margin-bottom: 60px;
+}
+
+.journey-eyebrow {
+  margin: 0 0 20px;
+  color: var(--olive);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.journey-heading h2 {
+  margin: 0 0 24px;
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.journey-heading h2 em {
+  color: var(--olive);
+}
+
+.journey-intro {
+  max-width: 600px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Three equal chapters on desktop */
+.journey-timeline {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px;
+  border-top: 1px solid var(--olive);
+}
+
+.journey-chapter {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding-top: 30px;
+}
+
+/* Chapter markers sit on the connecting line */
+.journey-chapter::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 0;
+  width: 11px;
+  height: 11px;
+  background: var(--olive);
+  border-radius: 50%;
+}
+
+.journey-phase {
+  color: var(--olive);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.journey-chapter h3 {
+  margin: 16px 0;
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.journey-chapter p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.journey-chapter .journey-takeaway {
+  margin-top: auto;
+  padding-top: 26px;
+  color: var(--olive);
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+/* Vertical timeline on smaller screens */
+@media (max-width: 800px) {
+  .about-journey {
+    padding: 65px 6%;
+  }
+
+  .journey-heading {
+    margin-bottom: 40px;
+  }
+
+  .journey-timeline {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-left: 6px;
+    border-top: none;
+    border-left: 1px solid var(--olive);
+  }
+
+  .journey-chapter {
+    padding: 0 0 40px 28px;
+  }
+
+  .journey-chapter:last-child {
+    padding-bottom: 0;
+  }
+
+  .journey-chapter::before {
+    top: 5px;
+    left: -6px;
+  }
+
+  .journey-chapter .journey-takeaway {
+    margin-top: 0;
+    padding-top: 18px;
+  }
+}
+
+/* SKILLS SECTION */
+.skills-map {
+  padding: 90px 6%;
+  background: var(--coffee);
+  color: var(--cream);
+}
+
+.skills-icon-library {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.skills-map-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-map-heading {
+  margin-bottom: 55px;
+  text-align: center;
+}
+
+.skills-map-heading h2 {
+  margin-bottom: 24px;
+  color: var(--cream);
+}
+
+.skills-map-heading p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skills-map-eyebrow {
+  margin-bottom: 20px;
+  color: var(--sage);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.skills-map-hint {
+  margin-top: 18px;
+  color: var(--sand);
+  font-size: 0.8rem;
+}
+
+/* BUBBLE GRID */
+.skills-bubbles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  justify-items: center;
+  align-items: center;
+  gap: 44px 32px;
+  padding: 20px 10px;
+}
+
+/* ONE CONSISTENT BUBBLE COLOR */
+.skills-map .skill-bubble {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 235px;
+  min-height: 235px;
+  aspect-ratio: 1;
+  margin: 0;
+  padding: 32px 22px 24px;
+
+  background: var(--cream);
+  color: var(--java);
+  border: 2px solid var(--olive);
+  border-radius: 50%;
+
+  font-family: var(--sans);
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.25s ease,
+    border-radius 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* LARGE OLIVE LINE ICON */
+.skill-main-icon {
+  display: block;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 14px;
+  fill: none;
+  stroke: var(--olive);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* SMALL CIRCULAR CORNER BADGE */
+.skill-logo-badge {
+  box-sizing: border-box;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+
+  width: 52px;
+  height: 52px;
+  padding: 9px;
+
+  background: var(--milk);
+  color: var(--olive);
+  border: 1px solid var(--olive);
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(43, 28, 22, 0.12);
+}
+
+.skill-logo-badge img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.skill-logo-pair {
+  width: 62px;
+  height: 62px;
+  padding: 8px;
+}
+
+.skill-logo-pair img {
+  width: 23px;
+  height: 30px;
+}
+
+.skill-logo-text {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.skill-badge-icon {
+  width: 28px;
+  height: 28px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* TEXT */
+.skill-name {
+  font-family: var(--serif);
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.skill-category {
+  margin-top: 10px;
+  color: var(--olive);
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.skill-detail {
+  display: none;
+  margin-top: 14px;
+  color: var(--coffee);
+  font-size: 0.77rem;
+  line-height: 1.5;
+}
+
+/* TAP / KEYBOARD EXPANSION */
+.skills-map .skill-bubble[aria-expanded="true"],
+.skills-map .skill-bubble:focus-visible {
+  border-radius: 30px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+}
+
+.skill-bubble[aria-expanded="true"] .skill-detail,
+.skill-bubble:focus-visible .skill-detail {
+  display: block;
+}
+
+.skill-bubble:focus-visible {
+  outline: 3px solid var(--sage);
+  outline-offset: 6px;
+}
+
+/* CSS HOVER ALSO WORKS WITHOUT JAVASCRIPT */
+@media (hover: hover) and (pointer: fine) {
+  .skills-map .skill-bubble:hover {
+    transform: translateY(-6px) scale(1.03);
+    border-radius: 30px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .skill-bubble:hover .skill-detail {
+    display: block;
+  }
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 1100px) {
+  .skills-bubbles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .skills-bubbles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .skills-map {
+    padding: 65px 6%;
+  }
+
+  .skills-bubbles {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .skills-map .skill-bubble {
+    max-width: 250px;
+  }
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+  .skills-map .skill-bubble {
+    transition: none;
+  }
+
+  .skills-map .skill-bubble:hover {
+    transform: none;
+  }
+}
+
 /* Separate Projects from Skills */
 section#projects {
   display: block;
@@ -1220,6 +1711,4 @@ footer {
   text-align: center;
 }
 
-} /* This closing brace was missing */
-
-
+}
