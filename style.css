@@ -754,6 +754,35 @@ section#projects {
   cursor: default;
 }
 
+/* Tech stack line */
+.artifact-content .artifact-tech {
+  margin-bottom: 16px;
+  color: var(--olive);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+}
+
+/* Side-by-side project buttons */
+.artifact-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.artifact-actions .artifact-button {
+  flex: 1;
+  min-width: 0;
+}
+
+.artifact-button-secondary {
+  background: transparent;
+  color: var(--olive);
+}
+
+.artifact-button-secondary:hover:not(:disabled) {
+  color: var(--milk);
+}
+
 /* Responsive columns */
 @media (max-width: 1050px) {
   .artifact-cards {
