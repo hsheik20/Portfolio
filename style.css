@@ -661,6 +661,12 @@ section#projects {
   padding: 0;
 }
 
+/* Keep the middle of a wide screenshot in view on wide cards */
+.artifact-cover .cover-img-centered {
+  height: 190px;
+  object-position: center 42%;
+}
+
 .cover-portfolio {
   background: #2b1c16;
   color: #f5efdf;
@@ -760,6 +766,24 @@ section#projects {
   color: var(--olive);
   font-size: 0.72rem;
   letter-spacing: 0.02em;
+}
+
+/* Progress status pill */
+.artifact-content .artifact-status {
+  align-self: flex-start;
+  margin: -4px 0 14px;
+  padding: 4px 10px;
+  border: 1px solid var(--olive);
+  border-radius: 999px;
+  color: var(--olive);
+  font-size: 0.7rem;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+}
+
+.artifact-content p strong {
+  color: var(--java);
+  font-weight: 600;
 }
 
 /* Side-by-side project buttons */
